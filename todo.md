@@ -47,3 +47,5 @@ Make an account on GitHub, Linkedin, ChatGPT, Lovable.dev, Leetcode.com, Hackera
 Learning Resources: YouTube , ChatGPT/Gemini/Bing-Copilot
 
 
+DAY 2 - git and git hub tutorials in hindi basics 
+- what is a program , process , task , sub task , thread , multi threading vs parallel proceses vs multi proceseessing vs multi tasking , 
