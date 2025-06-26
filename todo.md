@@ -1,23 +1,24 @@
 
-Expectations / Requirements:
-Logical Reasoning
-Quick Planning
-Decision Making
+#Expectations / Requirements:
+##-Logical Reasoning
+##-Quick Planning
+##-Decision Making
 
-Soft Skills:
-Communication : Business + professional
-Project Management
-Time Management
+#Soft Skills:
+##-Communication = Business + professional
+##-Project Management
+##-Time Management
 
-Technical Skills:
-JavaScript
-Python
-C++ with DSA (Optional)
-Programming Concepts
-OOPs
-Networking
-Cloud Computing
-System Design
+#Technical Skills:
+##-JavaScript
+##-Python
+##-C++ with DSA (Optional)
+
+#Programming Concepts :
+##-OOPs
+##-Networking
+##-Cloud Computing
+##-System Design
 
 ---
 
