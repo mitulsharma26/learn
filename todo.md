@@ -420,4 +420,3 @@ While a process is an independent unit with its own memory and resources, a thre
 
 
 
-- what is a program , process , task , sub task , thread , multi threading vs parallel proceses vs multi proceseessing vs multi tasking , 
