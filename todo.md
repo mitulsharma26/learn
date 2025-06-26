@@ -19,8 +19,7 @@ Networking
 Cloud Computing
 System Design
 
-
-====================================================
+---
 
 Day 1: 
 To Search: 
