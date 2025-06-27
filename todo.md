@@ -28,5 +28,6 @@ my name is mitul
 ---
 # Day 3 
 vs code short cuts , tricks and tips 
- git : pull , commit , add , push , stash , pop , local vs remote 
-html , css ,
+bash commands 
+git : pull , commit , add , push , stash , pop , local vs remote 
+organise all the topics with project manage ment 
