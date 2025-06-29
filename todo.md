@@ -3,7 +3,7 @@
 ## -Logical Reasoning
 ## -Quick Planning
 ## -Decision Making
-my name is mitul 
+
 
 ---
 # Soft Skills:
