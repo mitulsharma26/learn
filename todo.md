@@ -31,6 +31,3 @@ vs code short cuts , tricks and tips
 bash commands 
 git : pull , commit , add , push , stash , pop , local vs remote 
 organise all the topics with project manage ment 
-- creating new push 
-- setting upstream 
-- checking upstream 
