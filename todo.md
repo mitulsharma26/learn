@@ -29,5 +29,6 @@
 # Day 3 
 - vs code short cuts , tricks and tips 
 - bash commands 
-- git : pull , commit , add , push , stash , pop , local vs remote 
+- git : pull , commit , add , push , stash , pop
+- local vs remote 
 - organise all the topics 
