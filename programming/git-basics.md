@@ -65,17 +65,15 @@ All your version history (commits)
 
 ---
 
-🚀 Key Uses of Git:
-
-Use Case	Description
-
-🧾 Version Tracking	Keep track of changes to source code over time
-🤝 Collaboration	Multiple developers can work on the same project simultaneously
-🔁 Undo Mistakes	Easily revert to previous versions of code
-🌱 Branching & Merging	Create isolated branches for new features, then merge back safely
-☁️ Remote Development	Use platforms like GitHub, GitLab, Bitbucket to host and collaborate online
-📜 Change History	See who made what changes and why (with commit messages)
-🔒 Safe Experimentation	Test new features or fixes in a branch without affecting the main code
+| Use Case                    | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| 🧾 **Version Tracking**     | Keep track of changes to source code over time                              |
+| 🤝 **Collaboration**        | Multiple developers can work on the same project simultaneously              |
+| 🔁 **Undo Mistakes**        | Easily revert to previous versions of code                                  |
+| 🌱 **Branching & Merging**  | Create isolated branches for new features, then merge back safely           |
+| ☁️ **Remote Development**   | Use platforms like GitHub, GitLab, Bitbucket to host and collaborate online |
+| 📜 **Change History**       | See who made what changes and why (with commit messages)                     |
+| 🔒 **Safe Experimentation** | Test new features or fixes in a branch without affecting the main code       |
 
 
 
