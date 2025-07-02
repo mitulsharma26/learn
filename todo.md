@@ -41,3 +41,5 @@
 - ORM ( DBMS ) 
 - SQL / NO SQL 
 - API  
+- Interface in Java 
+- Basic SQL commands 
