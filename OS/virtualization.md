@@ -55,8 +55,8 @@ Fast deployment in cloud and data centers
 
 ## Example:
 
-A developer runs Ubuntu Linux inside Windows 10 using VirtualBox.
+- A developer runs Ubuntu Linux inside Windows 10 using VirtualBox.
 
-Cloud services like AWS use virtualization to provide on-demand virtual servers (EC2 instances).
+- Cloud services like AWS use virtualization to provide on-demand virtual servers (EC2 instances).
 
 
