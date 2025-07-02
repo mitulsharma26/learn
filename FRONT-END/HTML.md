@@ -24,7 +24,7 @@ HTML (HyperText Markup Language) is the standard language used to create and str
 
 - Non-semantic tags : on the other hand, do not convey any specific meaning about the content they contain. They are used mainly for styling or layout purposes and do not help with accessibility or search engine optimization.
 
-
+---
 
 ## Basic tags : 
 | Tag               | Use                                                |
