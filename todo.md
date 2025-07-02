@@ -32,3 +32,11 @@
 - git : pull , commit , add , push , stash , pop
 - local vs remote 
 - organise all the topics 
+- HTML and CSS ( most used ) 
+
+# Day 4 
+- ER diagrams 
+- OOPS concepts (e-commerce model) 
+- ORM ( DBMS ) 
+- SQL / NO SQL 
+- API  
