@@ -1,3 +1,31 @@
+# What is HTML?
+HTML (HyperText Markup Language) is the standard language used to create and structure content on the web. It tells the browser how to display text, images, links, and other elements on a webpage.
+
+---
+
+## Features of HTML
+
+1. Easy to learn and use
+2. Platform-independent
+3. Helps in structuring web page content
+4. Supports multimedia like images, audio, and video
+5. Allows linking between web pages using hyperlinks
+6. Supports forms for user input and interaction
+7. Provides semantic elements for better accessibility
+8. Compatible with all modern web browsers
+9. Can be combined with CSS and JavaScript
+10. Maintained as an open standard by the W3C
+
+---
+
+##  Difference Between Semantic and Non-Semantic Tags
+
+- Semantic tags : provide meaning to the web content. They describe the purpose of the content within them, making it easier for browsers, developers, and assistive technologies to understand the structure of a web page. These tags improve accessibility and SEO.
+
+- Non-semantic tags : on the other hand, do not convey any specific meaning about the content they contain. They are used mainly for styling or layout purposes and do not help with accessibility or search engine optimization.
+
+
+
 ## Basic tags : 
 | Tag               | Use                                                |
 |------------------|-----------------------------------------------------|
