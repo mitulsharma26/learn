@@ -131,8 +131,113 @@ The browser paints each pixel on the screen based on computed styles: colors, fo
 If layers (like animations, transforms) are present, they are composited and displayed on the screen.
 
 
+---
+
+Here’s a simple explanation of each:
+
 
 ---
+
+## 1. DNS Server (Domain Name System)
+
+### What is it?
+
+A DNS server is like the phonebook of the internet — it translates domain names (like google.com) into IP addresses (like 142.250.183.14), which computers use to find each other.
+
+### Why is it needed?
+
+Humans remember names, not IPs.
+
+Computers need IP addresses to locate servers.
+
+
+### How it works:
+
+When you type a website URL:
+
+1. Your browser asks the DNS server: “What’s the IP of example.com?”
+
+
+2. The DNS replies with the IP address.
+
+
+3. Now the browser can connect to that server.
+
+
+
+
+---
+
+## 2. TCP (Transmission Control Protocol)
+
+### What is it?
+
+TCP is a communication protocol that ensures reliable and ordered delivery of data between two systems (your browser and a web server).
+
+### Key Features:
+
+Reliable: Resends lost packets.
+
+Ordered: Delivers packets in the correct order.
+
+Connection-based: Uses a 3-way handshake to establish a connection before data transfer.
+
+### 3-Way Handshake:
+
+1. SYN (start connection)
+
+
+2. SYN-ACK (acknowledge and respond)
+
+
+3. ACK (confirm)
+
+
+
+Once complete, data flows securely and reliably.
+
+
+---
+
+## 3. SSL/TLS (Secure Sockets Layer / Transport Layer Security)
+
+### What is it?
+
+SSL/TLS encrypts data between your browser and the server, so no one (like hackers or ISPs) can read or tamper with it.
+
+TLS is the modern and secure version (SSL is outdated).
+
+
+### Why is it important?
+
+It protects:
+
+Passwords
+
+Credit card details
+
+Personal data
+
+
+### How it works:
+
+1. Browser and server agree on encryption methods.
+
+
+2. They exchange certificates to prove identity.
+
+
+3. They create a session key for encrypted communication.
+
+
+
+> Websites using SSL/TLS show https:// and a lock icon in the browser.
+
+
+
+
+---
+
 
 
 ## DOM vs CSSOM Parsing 
