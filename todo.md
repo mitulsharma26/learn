@@ -35,6 +35,7 @@
 - HTML and CSS ( most used ) 
 
 # Day 4 
+- Browsers
 - ER diagrams 
 - OOPS concepts (e-commerce model) 
 - ORM ( DBMS ) 
