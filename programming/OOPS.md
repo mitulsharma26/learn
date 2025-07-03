@@ -18,7 +18,31 @@
 | **Polymorphism**  | Performing a single action in different ways             |
 
 ---
+Sure! Here's a **simple definition and use cases** for both:
 
+---
+
+## Virtual Function
+A **virtual function** is a member function in a base class that can be **overridden** in a derived class. It supports **run-time polymorphism**, allowing the function call to be resolved based on the **object type**, not the pointer type.
+
+### Use Cases:
+
+* When you want to allow derived classes to **optionally override** a function.
+* When you want **dynamic behavior** based on object types (e.g., different display functions for different shapes).
+* Useful in cases where a **base pointer refers to a derived object**.
+
+---
+
+## Pure Virtual Functio
+A **pure virtual function** is a virtual function that has **no definition** in the base class and **must be overridden** in any derived class. It is declared using `= 0`. Any class with at least one pure virtual function becomes an **abstract class**.
+
+### Use Cases:
+
+* When you want to **enforce a contract** for all derived classes.
+* When you're designing **interfaces or abstract base classes**.
+* Useful when the base class should only provide a **common structure**, but not specific implementations.
+
+---
 ## Class and Object
 * A **class** is a user-defined data type that holds data members and member functions.
 * An **object** is an instance of a class.
