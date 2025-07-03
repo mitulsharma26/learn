@@ -42,4 +42,9 @@
 - SQL / NO SQL 
 - API  
 - Interface in Java 
-- Basic SQL commands 
+- Basic SQL commands
+
+# Day 5
+- JS : asynchronus programming , File handling , DOM manipulation
+- simple counter ( HTML , CSS , Java Script ) 
+- Multistep form  ( HTML , CSS , Java Script ) 
