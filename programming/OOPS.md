@@ -210,4 +210,162 @@ int main() {
 ```
 
 ---
+# E-commerce model using all major OOP concepts (c++) :
+
+## The model includes:
+
+* `User` and `Customer` classes
+* `Product` class
+* `Cart` class
+* `Order` class
+* Demonstration in `main()`
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// ===================== ABSTRACT BASE CLASS =====================
+class Person {
+protected:
+    string name;
+    string email;
+
+public:
+    // Constructor
+    Person(string n, string e) : name(n), email(e) {}
+
+    // Pure virtual function -> Abstraction
+    virtual void displayDetails() = 0;
+
+    // Virtual destructor
+    virtual ~Person() {}
+};
+
+// ===================== CUSTOMER CLASS =====================
+// Inherits Person -> Inheritance
+class Customer : public Person {
+private:
+    int customerID;
+
+public:
+    Customer(string n, string e, int id) : Person(n, e), customerID(id) {}
+
+    void displayDetails() override {
+        cout << "Customer Name: " << name << ", Email: " << email << ", ID: " << customerID << endl;
+    }
+
+    int getCustomerID() {
+        return customerID;
+    }
+};
+
+// ===================== PRODUCT CLASS =====================
+class Product {
+private:
+    int id;
+    string name;
+    double price;
+
+public:
+    // Constructor
+    Product(int pid, string pname, double pprice) : id(pid), name(pname), price(pprice) {}
+
+    // Getter methods -> Encapsulation
+    int getID() { return id; }
+    string getName() { return name; }
+    double getPrice() { return price; }
+
+    void displayProduct() {
+        cout << "Product ID: " << id << ", Name: " << name << ", Price: $" << price << endl;
+    }
+};
+
+// ===================== CART CLASS =====================
+class Cart {
+private:
+    vector<Product> items;
+
+public:
+    void addToCart(Product p) {
+        items.push_back(p);
+        cout << "Added to cart: " << p.getName() << endl;
+    }
+
+    void showCart() {
+        cout << "\n--- Cart Items ---" << endl;
+        for (auto item : items) {
+            item.displayProduct();
+        }
+    }
+
+    double getTotalAmount() {
+        double total = 0.0;
+        for (auto item : items) {
+            total += item.getPrice();
+        }
+        return total;
+    }
+
+    vector<Product> getItems() {
+        return items;
+    }
+};
+
+// ===================== ORDER CLASS =====================
+class Order {
+private:
+    int orderID;
+    Customer customer; // Composition: Order "has-a" Customer
+    vector<Product> products; // Order "has-a" Products
+
+public:
+    // Constructor
+    Order(int oid, Customer c, vector<Product> pList) : orderID(oid), customer(c), products(pList) {}
+
+    void displayOrder() {
+        cout << "\n--- Order Summary ---" << endl;
+        customer.displayDetails();
+        cout << "Order ID: " << orderID << endl;
+        cout << "Items Ordered:" << endl;
+
+        double total = 0;
+        for (auto p : products) {
+            p.displayProduct();
+            total += p.getPrice();
+        }
+
+        cout << "Total Amount: $" << total << endl;
+    }
+};
+
+// ===================== MAIN FUNCTION =====================
+int main() {
+    // Creating a customer object
+    Customer cust("John Doe", "john@example.com", 101);
+
+    // Creating product objects
+    Product p1(1, "Laptop", 750.00);
+    Product p2(2, "Mouse", 25.50);
+    Product p3(3, "Keyboard", 45.75);
+
+    // Adding products to cart
+    Cart cart;
+    cart.addToCart(p1);
+    cart.addToCart(p2);
+    cart.addToCart(p3);
+
+    cart.showCart();
+
+    // Creating an order
+    Order order1(5001, cust, cart.getItems());
+
+    // Displaying the order summary
+    order1.displayOrder();
+
+    return 0;
+}
+```
+
+---
 
