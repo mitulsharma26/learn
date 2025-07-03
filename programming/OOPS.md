@@ -232,6 +232,45 @@ int main() {
     return 0;
 }
 ```
+---
+## What is an Interface (in OOP)?
+An interface is a contract or blueprint in object-oriented programming that defines a set of method declarations (without implementation). Any class that "implements" the interface must provide the implementation for all the declared methods.
+
+- Interfaces are used to:
+
+  - Achieve abstraction
+
+  - Enable multiple inheritance
+
+  - Provide a common functionality structure without enforcing inheritance
+
+> Think of an interface as a "what to do" guide, while the implementing class provides "how to do it."
+
+- Key Characteristics of Interfaces:
+1. Contains only method declarations (no logic).
+
+2. No constructors or instance variables (except constants).
+
+3. A class implements an interface, not extends it.
+
+4. Supports multiple inheritance.
+
+---
+
+##  Difference Between Class and Interface
+
+| Aspect                 | **Class**                                                                  | **Interface**                                                                 |
+| ---------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Purpose**            | Used to define both **data (state)** and **behavior (methods)** of objects | Used to define **only behavior** (method signatures) without implementation   |
+| **Implementation**     | Can provide **method implementations**                                     | Cannot provide method implementations (only declarations)                     |
+| **Object Creation**    | Can be **instantiated** (to create objects)                                | Cannot be instantiated directly; must be **implemented by a class**           |
+| **Inheritance**        | Can inherit from another class (usually single inheritance)                | Can be implemented by multiple classes (allows **multiple inheritance**)      |
+| **Members**            | Contains **variables and methods**                                         | Contains **only method declarations** (and possibly constants)                |
+| **Access to Behavior** | Defines **how** behavior is performed                                      | Defines **what** behavior should be performed (but not how)                   |
+| **Usage**              | Used when you want to create **objects with actual functionality**         | Used to enforce **common behavior structure** across unrelated classes        |
+| **Real-World Analogy** | Like a **real product blueprint with building steps**                      | Like a **contract or rulebook** everyone must follow but must fill in details |
+
+
 
 ---
 # E-commerce model using all major OOP concepts (c++) :
