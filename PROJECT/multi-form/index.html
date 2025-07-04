@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style type="text/css">
+
+*{ margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+ body{
+    height: 100vh;
+    background: url('images/background2-form.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+.main{
+   width: 300px;
+   background: rgba(0, 0, 0, 0.5);
+   border-radius: 20px;
+   position: relative;
+   box-shadow: 0px 0px 5px 1px white;
+   height: 400px;
+   overflow: hidden ;
+}
+
+.main form{
+    width: 100%;
+    padding: 60px 30px;    
+    position: absolute; 
+    top: 0;
+    transition: 0.5s;
+}
+
+.main form input{
+    width: 100%;
+    padding: 10px 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    margin: 10px 0;
+}
+
+.btns{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btns button{
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(45deg,rgb(0, 92, 241) , white);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+h1{  margin-bottom: 10px;
+    color: rgb(0, 110, 255);
+   text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+.form1{
+    left: 0;
+}
+
+.form2 , .form3{
+    left: 100%;
+}
+
+.progress{
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid white;
+    display: flex;
+}
+
+.progress .steps{
+    width: 35%;
+    text-align: center;
+    padding: 15px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;   
+    z-index: 2;
+}
+
+.progressbar{
+    position: absolute;
+    width: 33%;
+    background: linear-gradient(to right , rgb(0, 94, 255) , white);
+    height: 100%;
+    z-index: 1;
+    transition: 0.4s;
+}
+.progressbar::after{ 
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 0;
+    right: -24px;
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-left: 26px solid rgb(0, 97, 241) ;
+
+}
+
+</style>
+
+</head>
+<body>
+    <div class="main">
+        <form class="form1">
+            <h1>Create Account</h1>
+            <input type="text" name="" placeholder="E-mail">
+            <input type="password" name="" placeholder="password">
+            <input type="password" name="" placeholder="confirm password">
+              <div class="btns">
+        <button type="button" onclick="Nexttoform2()">Next</button>
+    </div>
+     </form>
+       <form class="form2">
+            <h1>Personal details</h1>
+            <input type="text" name="" placeholder="First name">
+            <input type="text" name="" placeholder="Last name">
+            <input type="text" name="" placeholder="Mobile no.">
+              <div class="btns">
+        <button type="button" onclick="Nexttoform3()">Next</button>
+        <button type="button" onclick="Prevtoform1()">Prev</button>
+
+    </div>
+     </form>
+       <form class="form3">
+            <h1>Social links</h1>
+            <input type="text" name="" placeholder="LinkedIn">
+            <input type="text" name="" placeholder="GitHub">
+            <input type="text" name="" placeholder="Medium">
+              <div class="btns">
+        <button type="button" onclick="Prevtoform2()">Prev</button>
+        <button type="submit">Submit</button>
+
+    </div>
+     </form>
+    <div class="progress"> 
+        <div class="progressbar">
+
+        </div>
+        <div class="steps">Step 1</div>
+         <div class="steps">Step 2</div>
+          <div class="steps">Step 3</div>
+              
+    </div>
+
+    </div>
+</body>
+
+
+<script type="text/javascript">
+
+    let progressbar = document.querySelector('.progressbar');
+
+
+    const forms = document.querySelectorAll('form');
+    const Nexttoform2 = ()=>{
+        forms[0].style.left = '-100%';
+        forms[1].style.left = '0';
+        progressbar.style.width = '66%';
+    }
+    const Prevtoform1 = ()=>{
+         forms[0].style.left = '0';
+        forms[1].style.left = '100%';
+         progressbar.style.width = '33%';
+    }
+
+    const Nexttoform3 = ()=>{
+        forms[2].style.left = '0';
+        forms[1].style.left = '-100%';
+         progressbar.style.width = '100%';
+    }
+
+    const Prevtoform2 = ()=>{
+         forms[2].style.left = '100%';
+        forms[1].style.left = '0';
+         progressbar.style.width = '66%';
+    }
+
+</script>
+
+</html>
