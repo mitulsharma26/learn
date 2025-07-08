@@ -155,5 +155,39 @@ if you call a function ( already declared ) and pass a function in it as an argu
 ### Starvation of CB queue 
 is a condition in which the MT queue is creating its own small tasks and this delays the execution of call-backs inside the CB queue 
 
+# How browser interacts with JS 
+- almost every browser has its own JS run-time environmeent which has various components such as :
+     - JS engine ( V8 in Google ) 
+     - API 
+     - CB queue
+     - MT queue
+     - Event loop
+## JS engine process
+CODE -> PARSING -> COMPILATION -> EXECUTION 
+1. Parsing - the code is broken down into Tokens , which together parsed into a Abtract Syntax Tree (AST) by a syntax parser
+2. Compilation - JS engine can perform both interpretation and compilation , known as just in time (JIT) compilation
+     - AST transfers its data to the interpretor ans the interpretor coverts the high level code into byte code ( line by line ) for execution
+     - in between interpretor takes help from the compiler to convert code into its optimized form ( done in many phases )
+      - V8 of google has : ignition(interpretor) and turbofan(optimizing compiler)
 
+# Trust issues with the setimeout() 
+- Because the set timeout fn. can take more time than its timer
+- in case GEC executionn takes more time than the timer , in mean-time the call-back fun. will wait for its execution inside the CB queue
+- Event loop will only push this call-back inside the call-stack , when the GEC is poped out from it
+- that's why it is recommended that we should not write a code which blocks our main thread
+- this happeens even if the timer = 0 , this case can be used to delay some fuctions intentionally
 
+# Higher order function 
+A functionn which takes another function (call-back) as argument or returns a function from itself 
+- Examples :
+1.map() - used for the transformation of whole arrays
+  <br>
+2.filetr() - used to filter out values inside an array
+    <br>
+3.reduce() - used when by working on all values of the array , we have to come up with a single value
+   - call-back functions inside reduce() , takes 2 arguments :
+       1. accumulator (1st) - accumulates value based on a given condition
+       2. current (2nd) - current value in the array
+   - 2nd argument of the reduce() is the initial value for the accumulator
+ -  All these functions can be chained to increase their functionality 
+     
