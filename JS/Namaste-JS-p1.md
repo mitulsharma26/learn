@@ -114,3 +114,19 @@ when we try to shadow a same-name variable with different variable type inside t
 
 ### function declaration - also known as function statement , both are same 
 ### Named function expression - when we giuve a name to a function and aassign it a value , but this function cannot be called seperately ( as it is not created in outer scope , it is created as a local variable ) 
+
+# parameters VS arguments 
+1. arguments - are the values ,which we pass inside a function during its ivokatoin
+2. parameters - identifiers/labels which gets those values
+
+## First class functions 
+ability of the functions to be used as values and can be passed as arguments to another functions and can be returned from functions ( that's why functions are known as 1st class citizens) 
+
+## Call-back functions 
+if you call a function ( already declared ) and pass a function in it as an argument
+, then the fn. passed as argument is the call-back function 
+- giving responsibilty of a function (argument) to another function (declared)
+- asnynchronus nature of setimeout function is not possible without these call-backs
+
+
+
