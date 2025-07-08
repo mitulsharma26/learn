@@ -34,7 +34,7 @@ when is code is run , a global execution context is created in two phases:
 # Window Object 
 is a global object , created by JS engine along GEC . a **This** variable is also created 
 - Even if the file is empty this object is created
-- this var. is created for both functional and global EC
+- this var. is created for both functional (local) and global EC
 - a GEC is created , even if the file is empty
 
 # Undefined VS Not defined 
@@ -42,4 +42,11 @@ is a global object , created by JS engine along GEC . a **This** variable is als
 - where as **Not defiend** is a error , occurs when the memory is not allocated to the variable ( i.e not initialised in the wholee code ) and the code is trying to execute it
 ### JS is a loosely type language 
 it does not attaches its variables to any specific data type 
- 
+
+# The scope chain 
+- scope - refers to the place , where we can access a specific var. or fn. in a code
+- lexical (hierarchy) environment - whenever a EC is created a lexical env. is also created
+   - LE is the local memory along with the refernce to LE of its parent
+   - whenever a local EC is created , reference to its parents lexical env. is also stored in the variable environment
+   - GEC's lexical env. refernce points to NULL
+
