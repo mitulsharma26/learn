@@ -128,5 +128,32 @@ if you call a function ( already declared ) and pass a function in it as an argu
 - giving responsibilty of a function (argument) to another function (declared)
 - asnynchronus nature of setimeout function is not possible without these call-backs
 
+## browser allows JS to use its functionalities (comes under web API env.) by a global object known as window : 
+- settimeout()
+- DOM API's
+- fetch()
+- Local storage
+- Console
+- Location & many other
+
+# Event Loop 
+- when a call-back function is passed in **settimeout()** , it gets registered as a call-back in the web-api environment and starts the timer
+- JS moves to the next line , does not wait for the timer completion
+- when the timer expires , the registered call-back cannot pushed directly into the call-stack . it firstly pushed in the call-back queue
+- all call-back fn.'s are stored inside this call-back before getting pushed to the call-stack
+- here comes **Event loop** which checks whether the call-stack is empty ( i.e GEC is poped out)  or not , if yes then it pushes the call-back from the cb queue to the call-stack for its execution
+- Similar process follows during a **addEventlistner()** is executed , registers the call-back when the argumented Event occurs and stores it inside the cb queue and then furthur send by the Event loop to call-stack ( when it is empty) for execution
+
+## fetch() function (goes to server & requests a API call ) 
+- registers its function in the web API env.
+- when the request is fetched from the server and ready for execution
+- it does not get stored in the cb queue , but stored in a seperate **Micro-task queue**
+- this MT queue has higher priority than the cb queue i.e its call-backs are pushed first into the call-stack before any other call-back from CB queue ( only after the GEC is poped out from it ) 
+### What comes inside the MT queue 
+1. All call-back Fn.s which comes through promises , are stored here
+2. **Mutation Observer** - it keep son checking , whether there's any mutation in the DOM tree or not
+### Starvation of CB queue 
+is a condition in which the MT queue is creating its own small tasks and this delays the execution of call-backs inside the CB queue 
+
 
 
