@@ -6,12 +6,12 @@ import "./style.css";
 const App = () =>{
   return(
     <div className="container">
-      <Header/>
-      <Item/> 
-      <Item/> 
-      <Item/> 
-      <Item/> 
-      <Item/> 
+      <Header title ="TO-DO" />
+      <Item text="eat"/> 
+      <Item text="code"/> 
+      <Item text="play"/> 
+      <Item text="socialise"/> 
+      <Item text="sleep"/> 
       <Button/>
     </div>
   );
