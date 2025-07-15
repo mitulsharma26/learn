@@ -144,7 +144,7 @@ The `position` property in CSS determines how an element is **placed in the docu
 * Other elements are **not affected** by this movement.
 
 
-### absolute
+### 3. absolute
 
 * Removed from normal flow.
 * Positioned **relative to the nearest ancestor** with `position: relative` (or similar).
@@ -176,13 +176,67 @@ Used for:
 
 ---
 
+#  z-index
+
+The `z-index` property in CSS controls the **stacking order** of overlapping elements. An element with a higher `z-index` will appear **on top** of one with a lower value.
+
+
+## Rules of `z-index`:
+
+1. `z-index` **only works on positioned elements** (`relative`, `absolute`, `fixed`, or `sticky`)
+2. Higher `z-index` means **on top**
+3. If two elements have the same `z-index`, the one **declared later in HTML** will appear on top
+4. `z-index` comparisons **only work within the same stacking context**
+
+
+---
+
+# CSS Variables
+
+ **CSS Variables**, also known as **custom properties**, are user-defined values in CSS that begin with `--` and can be reused throughout a stylesheet using the `var()` function.
+They allow for **dynamic, maintainable, and scalable** styling by enabling the central definition of values like colors, sizes, fonts, and more.
 
 
 
+## Syntax of CSS Variables
+
+###  1. Global Declaration (using `:root`)
+
+* `:root` is the highest-level selector, representing the `<html>` element.
+* Variables declared here are available **anywhere in the CSS**.
+
+```css
+:root {
+  --primary-color: #4f46e5;
+  --font-size: 16px;
+}
+```
+
+#### Use it like:
+
+```css
+body {
+  color: var(--primary-color);
+  font-size: var(--font-size);
+}
+```
 
 
 
+### 2.Local Declaration (Scoped to a Selector)
 
+* Variables can also be defined **inside a specific element or class**.
+* These override global ones **within their scope**.
 
+```css
+.card {
+  --primary-color: #f97316;
+  background-color: var(--primary-color);
+}
+```
 
+#### In this case:
+
+* `--primary-color` is **only available inside `.card`**
+* If the same variable exists globally, this one will **override** it inside `.card`
 
