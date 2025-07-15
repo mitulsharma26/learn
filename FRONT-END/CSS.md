@@ -107,6 +107,75 @@ These units **scale** based on parent element, screen size, or font size.
 | ---- | ---------------------------- | ------------ |
 | `%`  | Percentage of parent element | `width: 80%` |
 
+---
+Absolutely! Here's a clear and concise explanation of **CSS `position` properties** — an essential part of layout and styling in CSS.
+
+---
+
+# Positions in CSS
+
+The `position` property in CSS determines how an element is **placed in the document flow** and how it behaves with `top`, `right`, `bottom`, and `left` values.
+
+
+
+## Types of CSS Position Values:
+
+| Position Value | Description                                                         |
+| -------------- | ------------------------------------------------------------------- |
+| `static`       | Default position (normal flow of the page)                          |
+| `relative`     | Moves **relative to its normal position**                           |
+| `absolute`     | Moves **relative to nearest positioned ancestor** (or page if none) |
+| `fixed`        | Stays **fixed to the screen** (viewport), not affected by scrolling |
+| `sticky`       | Behaves like `relative` until a scroll threshold, then `fixed`      |
+
+---
+
+## Detailed Explanations:
+
+### 1. static (default)
+
+* The element stays in normal document flow.
+* Can't be moved using `top`, `left`, etc.
+
+
+### 2. relative
+
+* Element stays in flow **but can be moved** using `top`, `left`, `right`, `bottom`.
+* Other elements are **not affected** by this movement.
+
+
+### absolute
+
+* Removed from normal flow.
+* Positioned **relative to the nearest ancestor** with `position: relative` (or similar).
+* If none, it positions relative to the **viewport (entire page)**.
+
+
+### 4. fixed
+
+* Removed from flow.
+* Positioned relative to the **viewport**.
+* Stays in place even when you scroll the page.
+
+Used for:
+
+* Floating buttons
+* Sticky headers/footers
+* Pop-ups
+
+
+### 5. sticky
+
+* A mix of `relative` and `fixed`.
+* Starts as `relative`, but **"sticks" to a position** when scrolling past a threshold.
+
+Used for:
+
+* Sticky headers
+* Scroll-based UI elements
+
+---
+
 
 
 
