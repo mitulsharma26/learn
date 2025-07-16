@@ -477,4 +477,82 @@ Cookies are stored as **key-value pairs** and are automatically **sent with ever
 | `Vary`          | Controls how caching varies based on request headers (like user-agent)     |
 
 ---
+Certainly! Here's a complete and in-depth explanation of **HTTP verbs (also called HTTP methods)** — what they are, their types, and use cases.
 
+---
+
+# What Are HTTP Verbs ?
+
+**HTTP verbs** (or methods) are commands used in the **HTTP protocol** to tell a web server **what action to perform** on a specific resource (like a file, data, or endpoint).
+
+They are used in **HTTP requests** and define the **intent** of the request.
+
+
+## Types of verbs 
+
+### 1. **GET**
+
+* Used to **retrieve** data from a server.
+* Should **not change any server data**.
+
+```http
+GET /products
+```
+
+### 2. **POST**
+
+* Used to **send data** to the server (e.g., from a form).
+* Often results in a **new resource being created**.
+
+```http
+POST /register
+Body: { "username": "mitul", "password": "1234" }
+```
+
+### 3. **PUT**
+
+* Used to **replace** an existing resource with new data.
+* If the resource doesn’t exist, it might create it.
+
+```http
+PUT /user/1
+Body: { "name": "Mitul", "age": 19 }
+```
+
+### 4. **PATCH**
+
+* Used to **partially update** a resource.
+* More efficient than PUT for small changes.
+
+```http
+PATCH /user/1
+Body: { "name": "Mitul Sharma" }
+```
+
+### 5. **DELETE**
+
+* Used to **remove a resource**.
+
+```http
+DELETE /post/55
+```
+
+### 6. **HEAD**
+
+* Same as GET, but **returns only headers** (no body).
+* Used to **check if a file exists**, or its size/type.
+
+```http
+HEAD /image.jpg
+```
+
+### 7. **OPTIONS**
+
+* Tells what HTTP methods are allowed on a resource.
+* Common in **CORS preflight** checks.
+
+```http
+OPTIONS /api/user
+```
+
+---
