@@ -107,8 +107,6 @@ These units **scale** based on parent element, screen size, or font size.
 | ---- | ---------------------------- | ------------ |
 | `%`  | Percentage of parent element | `width: 80%` |
 
----
-Absolutely! Here's a clear and concise explanation of **CSS `position` properties** — an essential part of layout and styling in CSS.
 
 ---
 
@@ -239,4 +237,93 @@ body {
 
 * `--primary-color` is **only available inside `.card`**
 * If the same variable exists globally, this one will **override** it inside `.card`
+
+
+---
+
+# `@property` in CSS 
+
+`@property` is a CSS at-rule that allows you to define **custom CSS properties (variables)** with **types**, **initial values**, and **inherited behavior**.
+It brings structure and control to custom properties, especially useful for **animations and transitions** on CSS variables.
+
+
+### Why use `@property`?
+
+Normally, CSS variables (like `--x`) are treated as **strings**, so they can't be transitioned or interpolated.
+
+But with `@property`, you can define a variable as a **number**, **color**, or **length**, making it animatable and more powerful.
+
+
+### Syntax of `@property`:
+
+```css
+@property --my-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #000;
+}
+```
+
+
+### Explanation of Components:
+
+| Part            | Description                                                   |
+| --------------- | ------------------------------------------------------------- |
+| `--my-color`    | The name of the custom property                               |
+| `syntax`        | Type of the value (`<length>`, `<color>`, `<number>`, etc.)   |
+| `inherits`      | `true` or `false` — whether it should inherit from its parent |
+| `initial-value` | Default value if the variable isn't set anywhere              |
+
+---
+
+
+# CSS Media Query 
+
+A **media query** is a CSS technique used to apply different styles to different devices or screen sizes.
+It allows your website to be **responsive** — meaning it looks good on phones, tablets, and desktops.
+
+Media queries check the **characteristics of the device** (like width, height, orientation, resolution) and apply styles only when the conditions match.
+
+
+### Basic Syntax:
+
+```css
+@media media-type and (media-feature) {
+  /* CSS rules here */
+}
+```
+
+
+### Components of a Media Query:
+
+| Component           | Description                                                   |
+| ------------------- | ------------------------------------------------------------- |
+| `@media`            | The at-rule that starts a media query                         |
+| `media-type`        | The type of device (e.g., `screen`, `print`, `all`)           |
+| `media-feature`     | The condition being tested (e.g., `max-width`, `orientation`) |
+| `logical operators` | Combine or modify conditions (`and`, `not`, `only`, `,`)      |
+| CSS Block           | The styles applied when the condition is true                 |
+
+
+### Common Media Features:
+
+| Feature       | Description                       | Example                    |
+| ------------- | --------------------------------- | -------------------------- |
+| `max-width`   | Max width of the screen           | `(max-width: 768px)`       |
+| `min-width`   | Min width of the screen           | `(min-width: 1024px)`      |
+| `orientation` | `portrait` or `landscape`         | `(orientation: landscape)` |
+| `max-height`  | Max height of the screen          | `(max-height: 600px)`      |
+| `resolution`  | Screen resolution in dpi/dppx     | `(min-resolution: 2dppx)`  |
+| `hover`       | Whether the device supports hover | `(hover: hover)`           |
+
+
+
+### Logical Operators:
+
+| Operator | Use                                                     |
+| -------- | ------------------------------------------------------- |
+| `and`    | Combine multiple conditions                             |
+| `,`      | "OR" — applies if **either condition** is true          |
+| `not`    | Negates the condition                                   |
+| `only`   | Prevents old browsers from applying unsupported queries |
 
