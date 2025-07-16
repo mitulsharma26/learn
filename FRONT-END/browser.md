@@ -252,3 +252,49 @@ Personal data
 | **6. Output** | **DOM Tree** → represents HTML structure and content | **CSSOM Tree** → represents stylesheet structure and applied styles |
 | **7. Interaction with JS** | DOM can be queried or modified via JS (`document.createElement`, etc.) | CSSOM can be queried/modified via JS (`document.styleSheets`, `insertRule`, etc.) |
 | **8. Purpose** | Describes **content and structure** of the page | Describes **visual presentation** (styles) of the page |
+
+
+---
+
+#  Local Storage
+
+**Local Storage** is a feature of the **Web Storage API** provided by modern web browsers that allows developers to **store key-value pairs of data in the browser**, persistently and **without expiration**.
+
+Unlike cookies (which are sent to the server with every request), local storage data is stored **entirely on the client side**, and is **not automatically transmitted** to the server. It provides a way to **store data across browser sessions**, which means the data remains available even after the browser or tab is closed and reopened.
+
+Local Storage is accessible via JavaScript through the global `localStorage` object.
+
+### How It Works
+
+When you store data using `localStorage`, it is saved in your browser's internal memory system — under that website's domain — and can be retrieved or modified anytime that site is revisited.
+
+```javascript
+// Store data
+localStorage.setItem('theme', 'dark');
+
+// Retrieve data
+const theme = localStorage.getItem('theme');
+
+// Remove data
+localStorage.removeItem('theme');
+
+// Clear all local storage for the domain
+localStorage.clear();
+```
+
+### Real-World Use Cases of Local Storage
+
+| Use Case                      | Description                                                                  |
+| ----------------------------- | ---------------------------------------------------------------------------- |
+|  **Theme Persistence**      | Remember dark/light mode preference between visits                           |
+|  **Shopping Cart**          | Temporarily store cart items in e-commerce websites without login            |
+|  **Form Autosave**          | Store partially filled form data (e.g., blog drafts or feedback forms)       |
+|  **Client-Side Tokens**     | Store JWT tokens for authentication (not recommended for high-security apps) |
+|  **User Preferences**       | Store language settings, font size, layout options                           |
+|  **Game Progress**          | Save score, level, or configuration of web games                             |
+|  **Notes or To-do Lists**   | Allow users to save quick notes/tasks even if the tab is closed              |
+|  **Dashboard State**        | Store filter or sort preferences for analytics dashboards                    |
+|  **First-Time Visit Flags** | Detect if the user has visited before and show/hide onboarding popups        |
+
+---
+
