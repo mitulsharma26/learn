@@ -51,12 +51,14 @@ header{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 #text{
     position: absolute;
-    font-size: 5em;
+    font-size: 4.2em;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    
 
 }
 
@@ -69,10 +71,10 @@ header{
     
 }
 .sec{
-    margin-top: 120px;
+  
     position: relative;
     background: #003329;
-    padding: 100px;
+    padding: 55px;
     margin-bottom: 0 ;
 }
 .sec h2{
@@ -84,4 +86,7 @@ header{
     font-size: 1em;
     color: #fff;
     font-weight: 300;    
+}
+#plant{
+    transform: translateY(-95px);
 }
