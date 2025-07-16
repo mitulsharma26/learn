@@ -1,0 +1,17 @@
+/* ContentSection.css */
+.sec {
+  position: relative;
+  background: #003329;
+  padding: 55px;
+  margin-bottom: 0;
+}
+.sec h2 {
+  font-size: 4em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.sec p {
+  font-size: 2em;
+  color: #fff;
+  font-weight: 300;
+}

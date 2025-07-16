@@ -1,0 +1,26 @@
+/* Parallax.css */
+.parallex {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.parallex img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+#text {
+  position: absolute;
+  font-size: 6em;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  
+}
+#plant {
+  transform: translateY(-95px);
+}
