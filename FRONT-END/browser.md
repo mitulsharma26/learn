@@ -367,3 +367,59 @@ Examples:
 
 ---
 
+# Cookie 
+
+A **cookie** is a small piece of **text-based data** that a website stores in the **user's web browser**. It allows the website to **remember information about the user** across different pages or sessions (visits), such as login status, preferences, and tracking data.
+
+Cookies are stored as **key-value pairs** and are automatically **sent with every HTTP request** to the same domain.
+
+
+##  How Cookies Work (Behind the Scenes)
+
+1. **Server Sets the Cookie:**
+   When a user visits a website, the server can send a cookie using the `Set-Cookie` header in the HTTP response.
+
+   ```
+   Set-Cookie: sessionId=abc123; Expires=Wed, 21 Aug 2025 07:28:00 GMT; Path=/; HttpOnly
+   ```
+
+2. **Browser Stores the Cookie:**
+   The browser stores it under the domain.
+
+3. **Browser Sends Cookie Back:**
+   On future requests to the same domain, the browser automatically adds the cookie to the HTTP request:
+
+   ```
+   Cookie: sessionId=abc123
+   ```
+
+4. **Server Uses the Cookie:**
+   The server reads the cookie to identify or remember the user.
+
+
+## Use Cases of Cookies
+
+| Use Case                  | Example                                                                   |
+| ------------------------- | ------------------------------------------------------------------------- |
+|  **Authentication**     | Storing session IDs or tokens after login                                 |
+|  **E-Commerce**         | Remembering shopping cart contents                                        |
+|  **Preferences**        | Saving language, theme (dark/light), font size                            |
+|  **Analytics/Tracking** | Identifying returning visitors (used by Google Analytics, Facebook, etc.) |
+|  **Form Auto-Fill**     | Remembering user input or pre-filling form fields                         |
+|  **A/B Testing**        | Assigning users to specific design variants                               |
+
+
+## Types of Cookies
+
+| Type                       | Description                                                                                                        |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+|  **Session Cookies**      | Temporary cookies that are deleted when the browser is closed.                                                     |
+|  **Persistent Cookies**  | Remain in the browser until a specified `expires` date.                                                            |
+|  **Secure Cookies**      | Only sent over HTTPS connections for security.                                                                     |
+|  **HttpOnly Cookies**     | Inaccessible via JavaScript, used to prevent XSS attacks.                                                          |
+|  **Third-Party Cookies** | Set by domains **other than the site being visited**. Often used for advertising and tracking.                     |
+| **SameSite Cookies**    | Controls whether cookies are sent with cross-site requests (`Strict`, `Lax`, `None`) to help prevent CSRF attacks. |
+
+---
+
+
