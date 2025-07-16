@@ -420,6 +420,61 @@ Cookies are stored as **key-value pairs** and are automatically **sent with ever
 |  **Third-Party Cookies** | Set by domains **other than the site being visited**. Often used for advertising and tracking.                     |
 | **SameSite Cookies**    | Controls whether cookies are sent with cross-site requests (`Strict`, `Lax`, `None`) to help prevent CSRF attacks. |
 
+
+
 ---
 
+## Caching in browser
+
+**Caching** is the process of storing a **copy of web resources (HTML, CSS, JS, images, etc.)** on the user's device (usually in memory or disk) so that future requests for those resources can be **served faster** — without contacting the server again.
+
+> In simple terms: **the browser saves stuff locally so your website loads faster next time.**
+
+---
+
+##  Why Is Caching Important?
+
+| Benefit                      | Description                                                     |
+| ---------------------------- | --------------------------------------------------------------- |
+|  Faster load times          | No need to download the same resources again                    |
+|  Reduced bandwidth         | Fewer requests to the server                                    |
+|  Better offline experience | Some apps can work even without internet (PWA, service workers) |
+|  Less server load         | Server gets fewer requests for static files                     |
+
+---
+
+## How Browser Caching Works
+
+1. User visits a website.
+2. The browser downloads resources (HTML, CSS, JS, images, fonts, etc.).
+3. Along with these, the server sends **HTTP caching headers** like `Cache-Control`, `Expires`, `ETag`, etc.
+4. The browser stores these resources in its **cache memory**.
+5. On subsequent visits:
+
+   * The browser uses **cached versions** instead of re-downloading.
+   * Or it checks if the file changed using headers (conditional caching).
+
+## Types of Caching in Browsers
+
+| Type                     | Description                                                             |
+| ------------------------ | ----------------------------------------------------------------------- |
+| **Memory Cache**         | Fastest. Stores items in RAM. Temporary and lost on reload.             |
+| **Disk Cache**           | Persists between sessions. Stores static resources (images, JS, CSS).   |
+| **Service Worker Cache** | Controlled by code (custom logic). Used in Progressive Web Apps (PWAs). |
+| **Prefetch/Preload**     | Browser downloads resources it thinks will be used next.                |
+| **HTTP Cache**           | Controlled by HTTP headers (e.g., `Cache-Control`, `ETag`, etc.)        |
+
+
+##  HTTP Headers Used in Caching
+
+| Header          | Purpose                                                                    |
+| --------------- | -------------------------------------------------------------------------- |
+| `Cache-Control` | Primary header to define caching rules (public/private, max-age, no-store) |
+| `Expires`       | Sets a date after which the resource is considered stale                   |
+| `ETag`          | A unique identifier for a version of a resource                            |
+| `Last-Modified` | Timestamp of the last change to a file                                     |
+| `Pragma`        | Legacy header (usually `no-cache`)                                         |
+| `Vary`          | Controls how caching varies based on request headers (like user-agent)     |
+
+---
 
