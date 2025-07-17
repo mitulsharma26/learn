@@ -296,10 +296,6 @@ localStorage.clear();
 |  **Dashboard State**        | Store filter or sort preferences for analytics dashboards                    |
 |  **First-Time Visit Flags** | Detect if the user has visited before and show/hide onboarding popups        |
 
----
-
-
-Sure! Let’s dive deep into **headers in a browser** — what they are, how they work, and their practical uses in web development.
 
 ---
 
