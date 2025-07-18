@@ -115,7 +115,6 @@ new Promise((resolve) => {
 * `async` and `await` are **modern keywords** used to **write asynchronous code** in a more **readable, synchronous-looking** way.
 * They work with **Promises** behind the scenes.
 
----
 
 ##  **Syntax & Explanation**
 
@@ -173,6 +172,10 @@ async function showData() {
 
 showData();
 ```
-
+## Important points to remember : 
+- usually promises are returned as values from the async function , but if the returning value is not a promise then the async function wrap the value inside a promise , then return it ;
+- usually , JS dont wait for promises to get resolved , it will continue executing next lines , but in async-await , program waits for the promise to get resolved at the await-line
+- if multiple promises are resolved one after other , then the one with the preceeding await-line will get executed first even if it is resolved later
+- In call stack , when JS encouunters a async function it get pushed , but if during its execution a await-line is encountered whose promise is not resolved , then the async function get suspended After the promise is resolved , the execution will continue 
 ---
 
