@@ -103,10 +103,76 @@ new Promise((resolve) => {
   });
 ```
 
-### 🔍 How it works:
+###  How it works:
 
 * Each `.then()` returns a **new Promise**.
 * The **returned value** is passed to the **next** `.then()`.
+
+
+
+# `async` and `await`
+
+* `async` and `await` are **modern keywords** used to **write asynchronous code** in a more **readable, synchronous-looking** way.
+* They work with **Promises** behind the scenes.
+
+---
+
+##  **Syntax & Explanation**
+
+### `async` keyword:
+
+Used **before a function** to declare that it returns a **Promise**.
+
+```javascript
+async function myFunction() {
+  return "Hello!";
+}
+```
+
+➡ This is the same as:
+
+```javascript
+function myFunction() {
+  return Promise.resolve("Hello!");
+}
+```
+
+
+
+### `await` keyword:
+
+Used **inside async functions** to **pause** the execution **until the Promise resolves**.
+
+```javascript
+let result = await somePromise;
+```
+
+* `await` can only be used **inside an `async` function**
+* It **waits** for the Promise to finish and gives you the **resolved value**
+
+
+Sure, here is just the example code without emojis:
+
+### Example 
+```javascript
+function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Data received");
+    }, 2000);
+  });
+}
+
+async function showData() {
+  console.log("Fetching data...");
+
+  let result = await fetchData();
+
+  console.log(result);
+}
+
+showData();
+```
 
 ---
 
