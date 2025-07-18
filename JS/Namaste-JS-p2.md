@@ -20,3 +20,93 @@ That process is called inversion of control.
 - Importance of promises :
   - inversion of control - by attaching the callback function to the promise object rather than passing it as an argument. 
   - call-back hell - can be tackled by using promise chaining ( using then-chains ) , always precede the chained call-back function wwith a return-statement OR an arrow-function can also be used     
+
+--- 
+
+# Promise Creation
+
+###  Syntax:
+
+```javascript
+let promise = new Promise(function(resolve, reject) {
+  // async task
+});
+```
+
+###  Example:
+
+```javascript
+let promise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("Task done!");
+  } else {
+    reject("Task failed!");
+  }
+});
+```
+
+
+* `resolve(value)` → marks promise as **fulfilled**
+* `reject(error)` → marks it as **rejected**
+
+---
+
+##   Using `.then()` and `.catch()`
+
+###  `.then()` — Handles success
+
+```javascript
+promise.then((result) => {
+  console.log("Success:", result);
+});
+```
+
+* It runs when `resolve()` is called.
+* The value passed to `resolve()` becomes `result`.
+
+
+
+### `.catch()` — Handles errors
+
+```javascript
+promise.catch((error) => {
+  console.log("Error:", error);
+});
+```
+
+* It runs when `reject()` is called.
+* The value passed to `reject()` becomes `error`.
+
+
+
+---
+
+##  Promise Chaining
+Chaining allows you to perform multiple tasks **in order**, each using the result of the previous one.
+
+```javascript
+new Promise((resolve) => {
+  resolve(2);
+})
+  .then((value) => {
+    console.log(value); // 2
+    return value * 2;
+  })
+  .then((value) => {
+    console.log(value); // 4
+    return value * 2;
+  })
+  .then((value) => {
+    console.log(value); // 8
+  });
+```
+
+### 🔍 How it works:
+
+* Each `.then()` returns a **new Promise**.
+* The **returned value** is passed to the **next** `.then()`.
+
+---
+
