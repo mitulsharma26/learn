@@ -178,4 +178,26 @@ showData();
 - if multiple promises are resolved one after other , then the one with the preceeding await-line will get executed first even if it is resolved later
 - In call stack , when JS encouunters a async function it get pushed , but if during its execution a await-line is encountered whose promise is not resolved , then the async function get suspended After the promise is resolved , the execution will continue 
 ---
+# Promise API's 
+1. Promise.all([p1,p2,...])
+   - it makes call for all promises prallely , but waits for all pf them to get resolved
+   - if any of the promise is rejected , it shows error without waiting for any other promise
+2. Promise.allsettled([p1,p2,...])
+   - it also calls for promises parallely and waits for all of them to get resolved
+   - if any of the promise get rejected , it still waits for other promises to get settled and returns values or according to the state of promises
+3. Promise.race([p1,p2,...])
+   - the 1st promise which get settled from the array , only its value will be returned
+   - even if the 1st promise get rejected , it returns the error
+4. Promise.any([p1,p2...p3])
+   - it wait for the 1st promise to get resolved only
+   - if a promise is get rejected before it , then it will be ignored
+   - but if all the promises in the array get rejected then it will return an aggregated error .
+
+## this keyword 
+- in global space , has the value of the global object ( window in browsers )
+- inside a function , it also have the value of the global object in non-strict mode(default)
+    - but it in strict-mode , this-substitition happens under which this has undefined value ( but it returns global object , when we call like this : window.fn();)
+- inside an object's method , when we call obj.fun(); , then this returns the whole object as its value
+- inside an arrow function , it does not have its own this value , it takes it from its enclosing lexical context
+- inside DOM , it is the refernce to the HTML element 
 
