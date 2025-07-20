@@ -252,3 +252,303 @@ Personal data
 | **6. Output** | **DOM Tree** → represents HTML structure and content | **CSSOM Tree** → represents stylesheet structure and applied styles |
 | **7. Interaction with JS** | DOM can be queried or modified via JS (`document.createElement`, etc.) | CSSOM can be queried/modified via JS (`document.styleSheets`, `insertRule`, etc.) |
 | **8. Purpose** | Describes **content and structure** of the page | Describes **visual presentation** (styles) of the page |
+
+
+---
+
+#  Local Storage
+
+**Local Storage** is a feature of the **Web Storage API** provided by modern web browsers that allows developers to **store key-value pairs of data in the browser**, persistently and **without expiration**.
+
+Unlike cookies (which are sent to the server with every request), local storage data is stored **entirely on the client side**, and is **not automatically transmitted** to the server. It provides a way to **store data across browser sessions**, which means the data remains available even after the browser or tab is closed and reopened.
+
+Local Storage is accessible via JavaScript through the global `localStorage` object.
+
+### How It Works
+
+When you store data using `localStorage`, it is saved in your browser's internal memory system — under that website's domain — and can be retrieved or modified anytime that site is revisited.
+
+```javascript
+// Store data
+localStorage.setItem('theme', 'dark');
+
+// Retrieve data
+const theme = localStorage.getItem('theme');
+
+// Remove data
+localStorage.removeItem('theme');
+
+// Clear all local storage for the domain
+localStorage.clear();
+```
+
+### Real-World Use Cases of Local Storage
+
+| Use Case                      | Description                                                                  |
+| ----------------------------- | ---------------------------------------------------------------------------- |
+|  **Theme Persistence**      | Remember dark/light mode preference between visits                           |
+|  **Shopping Cart**          | Temporarily store cart items in e-commerce websites without login            |
+|  **Form Autosave**          | Store partially filled form data (e.g., blog drafts or feedback forms)       |
+|  **Client-Side Tokens**     | Store JWT tokens for authentication (not recommended for high-security apps) |
+|  **User Preferences**       | Store language settings, font size, layout options                           |
+|  **Game Progress**          | Save score, level, or configuration of web games                             |
+|  **Notes or To-do Lists**   | Allow users to save quick notes/tasks even if the tab is closed              |
+|  **Dashboard State**        | Store filter or sort preferences for analytics dashboards                    |
+|  **First-Time Visit Flags** | Detect if the user has visited before and show/hide onboarding popups        |
+
+
+---
+
+# Headers in a Browser
+
+**Headers** are pieces of metadata (key-value pairs) sent **before** the actual content in an **HTTP request or response**. They are part of the **HTTP protocol** and used to describe:
+
+* the **request or response**
+* the **content being sent**
+* **how to handle** that content
+
+Headers are not visible on a webpage but are **used behind the scenes** when the browser communicates with a server.
+
+
+## Types of Headers
+
+There are two main categories:
+
+### 1. Request Headers (Browser ➡ Server)
+
+These are sent **by the browser** to the server when you make a request.
+
+Examples:
+
+| Header          | Meaning                                                                  |
+| --------------- | ------------------------------------------------------------------------ |
+| `Host`          | Domain being requested (e.g., [www.example.com](http://www.example.com)) |
+| `User-Agent`    | Browser and OS info (e.g., Chrome, Windows)                              |
+| `Accept`        | What type of response formats are accepted (e.g., JSON)                  |
+| `Authorization` | Credentials (like tokens) for secure resources                           |
+| `Referer`       | URL of the previous page that made the request                           |
+| `Cookie`        | Sends cookies stored in the browser                                      |
+| `Content-Type`  | Format of the body being sent (e.g., `application/json`)                 |
+
+---
+
+### 2. Response Headers (Server ➡ Browser)
+
+These are sent **by the server** in response to the browser's request.
+
+Examples:
+
+| Header                        | Meaning                                                       |
+| ----------------------------- | ------------------------------------------------------------- |
+| `Content-Type`                | Type of data returned (e.g., `text/html`, `application/json`) |
+| `Content-Length`              | Size of the response body in bytes                            |
+| `Set-Cookie`                  | Instructs browser to store cookies                            |
+| `Cache-Control`               | Controls caching behavior                                     |
+| `Access-Control-Allow-Origin` | Controls which domains can access this server (CORS)          |
+| `Strict-Transport-Security`   | Forces HTTPS connection                                       |
+
+---
+
+### Use Cases of Headers
+
+| Use Case                          | Headers Involved                                                          |
+| --------------------------------- | ------------------------------------------------------------------------- |
+|  Authentication                 | `Authorization`, `Set-Cookie`, `WWW-Authenticate`                         |
+|  File downloads                 | `Content-Disposition: attachment; filename=...`                           |
+|  CORS (Cross-Origin)            | `Access-Control-Allow-Origin`, `Origin`                                   |
+| Caching and speed optimization | `Cache-Control`, `ETag`, `Last-Modified`                                  |
+|  Security                       | `Strict-Transport-Security`, `X-Frame-Options`, `Content-Security-Policy` |
+|  Language preference            | `Accept-Language`                                                         |
+| Device or browser info         | `User-Agent`                                                              |
+
+---
+
+# Cookie 
+
+A **cookie** is a small piece of **text-based data** that a website stores in the **user's web browser**. It allows the website to **remember information about the user** across different pages or sessions (visits), such as login status, preferences, and tracking data.
+
+Cookies are stored as **key-value pairs** and are automatically **sent with every HTTP request** to the same domain.
+
+
+##  How Cookies Work (Behind the Scenes)
+
+1. **Server Sets the Cookie:**
+   When a user visits a website, the server can send a cookie using the `Set-Cookie` header in the HTTP response.
+
+   ```
+   Set-Cookie: sessionId=abc123; Expires=Wed, 21 Aug 2025 07:28:00 GMT; Path=/; HttpOnly
+   ```
+
+2. **Browser Stores the Cookie:**
+   The browser stores it under the domain.
+
+3. **Browser Sends Cookie Back:**
+   On future requests to the same domain, the browser automatically adds the cookie to the HTTP request:
+
+   ```
+   Cookie: sessionId=abc123
+   ```
+
+4. **Server Uses the Cookie:**
+   The server reads the cookie to identify or remember the user.
+
+
+## Use Cases of Cookies
+
+| Use Case                  | Example                                                                   |
+| ------------------------- | ------------------------------------------------------------------------- |
+|  **Authentication**     | Storing session IDs or tokens after login                                 |
+|  **E-Commerce**         | Remembering shopping cart contents                                        |
+|  **Preferences**        | Saving language, theme (dark/light), font size                            |
+|  **Analytics/Tracking** | Identifying returning visitors (used by Google Analytics, Facebook, etc.) |
+|  **Form Auto-Fill**     | Remembering user input or pre-filling form fields                         |
+|  **A/B Testing**        | Assigning users to specific design variants                               |
+
+
+## Types of Cookies
+
+| Type                       | Description                                                                                                        |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+|  **Session Cookies**      | Temporary cookies that are deleted when the browser is closed.                                                     |
+|  **Persistent Cookies**  | Remain in the browser until a specified `expires` date.                                                            |
+|  **Secure Cookies**      | Only sent over HTTPS connections for security.                                                                     |
+|  **HttpOnly Cookies**     | Inaccessible via JavaScript, used to prevent XSS attacks.                                                          |
+|  **Third-Party Cookies** | Set by domains **other than the site being visited**. Often used for advertising and tracking.                     |
+| **SameSite Cookies**    | Controls whether cookies are sent with cross-site requests (`Strict`, `Lax`, `None`) to help prevent CSRF attacks. |
+
+
+
+---
+
+## Caching in browser
+
+**Caching** is the process of storing a **copy of web resources (HTML, CSS, JS, images, etc.)** on the user's device (usually in memory or disk) so that future requests for those resources can be **served faster** — without contacting the server again.
+
+> In simple terms: **the browser saves stuff locally so your website loads faster next time.**
+
+---
+
+##  Why Is Caching Important?
+
+| Benefit                      | Description                                                     |
+| ---------------------------- | --------------------------------------------------------------- |
+|  Faster load times          | No need to download the same resources again                    |
+|  Reduced bandwidth         | Fewer requests to the server                                    |
+|  Better offline experience | Some apps can work even without internet (PWA, service workers) |
+|  Less server load         | Server gets fewer requests for static files                     |
+
+---
+
+## How Browser Caching Works
+
+1. User visits a website.
+2. The browser downloads resources (HTML, CSS, JS, images, fonts, etc.).
+3. Along with these, the server sends **HTTP caching headers** like `Cache-Control`, `Expires`, `ETag`, etc.
+4. The browser stores these resources in its **cache memory**.
+5. On subsequent visits:
+
+   * The browser uses **cached versions** instead of re-downloading.
+   * Or it checks if the file changed using headers (conditional caching).
+
+## Types of Caching in Browsers
+
+| Type                     | Description                                                             |
+| ------------------------ | ----------------------------------------------------------------------- |
+| **Memory Cache**         | Fastest. Stores items in RAM. Temporary and lost on reload.             |
+| **Disk Cache**           | Persists between sessions. Stores static resources (images, JS, CSS).   |
+| **Service Worker Cache** | Controlled by code (custom logic). Used in Progressive Web Apps (PWAs). |
+| **Prefetch/Preload**     | Browser downloads resources it thinks will be used next.                |
+| **HTTP Cache**           | Controlled by HTTP headers (e.g., `Cache-Control`, `ETag`, etc.)        |
+
+
+##  HTTP Headers Used in Caching
+
+| Header          | Purpose                                                                    |
+| --------------- | -------------------------------------------------------------------------- |
+| `Cache-Control` | Primary header to define caching rules (public/private, max-age, no-store) |
+| `Expires`       | Sets a date after which the resource is considered stale                   |
+| `ETag`          | A unique identifier for a version of a resource                            |
+| `Last-Modified` | Timestamp of the last change to a file                                     |
+| `Pragma`        | Legacy header (usually `no-cache`)                                         |
+| `Vary`          | Controls how caching varies based on request headers (like user-agent)     |
+
+---
+Certainly! Here's a complete and in-depth explanation of **HTTP verbs (also called HTTP methods)** — what they are, their types, and use cases.
+
+---
+
+# What Are HTTP Verbs ?
+
+**HTTP verbs** (or methods) are commands used in the **HTTP protocol** to tell a web server **what action to perform** on a specific resource (like a file, data, or endpoint).
+
+They are used in **HTTP requests** and define the **intent** of the request.
+
+
+## Types of verbs 
+
+### 1. **GET**
+
+* Used to **retrieve** data from a server.
+* Should **not change any server data**.
+
+```http
+GET /products
+```
+
+### 2. **POST**
+
+* Used to **send data** to the server (e.g., from a form).
+* Often results in a **new resource being created**.
+
+```http
+POST /register
+Body: { "username": "mitul", "password": "1234" }
+```
+
+### 3. **PUT**
+
+* Used to **replace** an existing resource with new data.
+* If the resource doesn’t exist, it might create it.
+
+```http
+PUT /user/1
+Body: { "name": "Mitul", "age": 19 }
+```
+
+### 4. **PATCH**
+
+* Used to **partially update** a resource.
+* More efficient than PUT for small changes.
+
+```http
+PATCH /user/1
+Body: { "name": "Mitul Sharma" }
+```
+
+### 5. **DELETE**
+
+* Used to **remove a resource**.
+
+```http
+DELETE /post/55
+```
+
+### 6. **HEAD**
+
+* Same as GET, but **returns only headers** (no body).
+* Used to **check if a file exists**, or its size/type.
+
+```http
+HEAD /image.jpg
+```
+
+### 7. **OPTIONS**
+
+* Tells what HTTP methods are allowed on a resource.
+* Common in **CORS preflight** checks.
+
+```http
+OPTIONS /api/user
+```
+
+---

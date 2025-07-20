@@ -174,4 +174,61 @@ Convert speech to text or vice versa.
 | `SpeechRecognition` | Voice input    | Voice search, commands |
 | `speechSynthesis`   | Text-to-speech | Read content aloud     |
 
+# JSON
+
+**JSON (JavaScript Object Notation)** is a lightweight, text-based format for **storing and exchanging data**. It is **easy for humans to read and write**, and **easy for machines to parse and generate**.
+
+JSON is often used to transmit data between a **server and a web application** (like when fetching user data or sending form info).
+
+
+##  Structure of JSON
+
+JSON is built using:
+
+* **Objects**: `{ "key": "value" }` (like dictionaries in Python)
+* **Arrays**: `[1, 2, 3]` (like lists)
+* **Data types**: string, number, boolean, null, array, object
+
+Example:
+
+```json
+{
+  "name": "Mitul",
+  "age": 19,
+  "isStudent": true,
+  "skills": ["Python", "HTML", "CSS"],
+  "address": {
+    "city": "Ambala",
+    "state": "Haryana"
+  }
+}
+```
+
+
+## Common Uses of JSON
+
+1. **Web APIs (RESTful APIs)**
+
+   * Server sends data in JSON format (e.g., user info, product data).
+   * Client parses it using JavaScript or other languages.
+
+2. **Configuration Files**
+
+   * Tools like ESLint, Babel, Prettier use `.json` config files.
+   * Example: `package.json` in Node.js manages project settings.
+
+3. **Data Storage**
+
+   * Lightweight databases or local files (e.g., storing settings).
+   * `localStorage` or `IndexedDB` in the browser often uses JSON.
+
+4. **Communication Between Languages**
+
+   * Languages like Python, Java, PHP, and Ruby all support JSON.
+   * Ideal format for cross-language data exchange.
+
+5. **Serialization/Deserialization**
+
+   * Convert complex data structures to JSON string (serialization) to store or send.
+   * Parse back into native objects (deserialization) when needed.
 
