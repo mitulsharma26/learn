@@ -85,7 +85,7 @@ it does not attaches its variables to any specific data type
 ## Illegal shadowing 
 when we try to shadow a same-name variable with different variable type inside the block {}
 - if a variable (inside) shadowing a variable(outside) then it should not cross its scope ( i.e var variables can be shadowed by let/const variables
-- do not applies in function scope function(){} i.e let/const can be shadowed by var 
+- do not applies in function scope function(){} i.e let/const cannot be shadowed by var 
 
 ### Every block {} has its own lexical scope & follows the scope chain pattern i.e if variable is accessed , then its value depends upon its nearest lexical scope . Scopes are same for both normal & arrow functions 
 # closures 
